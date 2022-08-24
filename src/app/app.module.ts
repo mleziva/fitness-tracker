@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material.module'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
 import { SignupComponent } from './auth/signup/signup.component'
@@ -17,6 +17,7 @@ import { WelcomeComponent } from './welcome/welcome.component'
 import { HeaderComponent } from './navigation/header/header.component'
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component'
 import { StopTrainingComponent } from './training/current-training/stop-training.component'
+import { AuthService } from './auth/auth.service'
 
 @NgModule({
   declarations: [
@@ -39,8 +40,9 @@ import { StopTrainingComponent } from './training/current-training/stop-training
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent],
 })
